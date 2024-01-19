@@ -5,7 +5,6 @@ import 'package:args/command_runner.dart';
 
 import '../../../models/address.dart';
 import '../../../models/city.dart';
-import '../../../models/course.dart';
 import '../../../models/phone.dart';
 import '../../../models/student.dart';
 import '../../../repositories/product_repository.dart';
