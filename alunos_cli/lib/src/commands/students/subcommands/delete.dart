@@ -3,7 +3,6 @@ import 'dart:io';
 
 import 'package:args/command_runner.dart';
 
-import '../../../models/student.dart';
 import '../../../repositories/student_repository.dart';
 
 class Delete extends Command{
