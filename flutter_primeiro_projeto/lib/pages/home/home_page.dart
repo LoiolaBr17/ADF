@@ -3,7 +3,8 @@ import 'package:flutter/material.dart';
 enum PopupMenuPages {
   container,
   rowsColumns,
-  mediaQuery
+  mediaQuery,
+  layoutBuilder
 }
 
 class HomePage extends StatelessWidget {
@@ -27,6 +28,9 @@ class HomePage extends StatelessWidget {
                 case PopupMenuPages.mediaQuery:
                   Navigator.of(context).pushNamed('/media_query');
                   break;
+                case PopupMenuPages.layoutBuilder:
+                  Navigator.of(context).pushNamed('/layout_builder');
+                  break;
               }
             },
             itemBuilder: (BuildContext context) {
@@ -42,6 +46,10 @@ class HomePage extends StatelessWidget {
                 const PopupMenuItem<PopupMenuPages>(
                   value: PopupMenuPages.mediaQuery,
                   child: Text('MediaQuery'),
+                ),
+                const PopupMenuItem<PopupMenuPages>(
+                  value: PopupMenuPages.layoutBuilder,
+                  child: Text('LayoutBuilder'),
                 ),
               ];
             },
