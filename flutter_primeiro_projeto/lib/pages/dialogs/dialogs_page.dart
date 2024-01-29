@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_primeiro_projeto/pages/dialogs/dialog_custom.dart';
 
@@ -55,6 +57,7 @@ class DialogsPage extends StatelessWidget {
                 showDialog(
                     context: context,
                     builder: (context) {
+                      if (Platform.isAndroid){}
                       return AlertDialog(
                         title: const Text('Alert Dialog'),
                         content: SingleChildScrollView(
