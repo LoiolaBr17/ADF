@@ -30,16 +30,15 @@ class FeedWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: MediaQuery.of(context).size.height,
-      child: ListView.builder(
-        itemCount: posts.length,
-        itemBuilder: (context, index) {
-          return PostWidget(
-            postData: posts[index],
-          );
-        },
-      ),
+    return ListView.builder(
+      shrinkWrap: true,
+      physics: const NeverScrollableScrollPhysics(),
+      itemCount: posts.length,
+      itemBuilder: (context, index) {
+        return PostWidget(
+          postData: posts[index],
+        );
+      },
     );
   }
 }
