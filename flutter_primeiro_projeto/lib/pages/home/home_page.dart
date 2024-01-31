@@ -15,7 +15,8 @@ enum PopupMenuPages {
   stack,
   bottomNavigatorBar,
   circleAvatar,
-  cores
+  cores,
+  materialBanner,
 }
 
 class HomePage extends StatelessWidget {
@@ -74,6 +75,9 @@ class HomePage extends StatelessWidget {
                   break;
                 case PopupMenuPages.cores:
                   Navigator.of(context).pushNamed('/cores');
+                  break;
+                case PopupMenuPages.materialBanner:
+                  Navigator.of(context).pushNamed('/material_banner');
                   break;
               }
             },
@@ -138,6 +142,10 @@ class HomePage extends StatelessWidget {
                 const PopupMenuItem<PopupMenuPages>(
                   value: PopupMenuPages.cores,
                   child: Text('Cores'),
+                ),
+                const PopupMenuItem<PopupMenuPages>(
+                  value: PopupMenuPages.materialBanner,
+                  child: Text('Material Banner'),
                 ),
               ];
             },
