@@ -17,6 +17,7 @@ enum PopupMenuPages {
   circleAvatar,
   cores,
   materialBanner,
+  instagram,
 }
 
 class HomePage extends StatelessWidget {
@@ -78,6 +79,9 @@ class HomePage extends StatelessWidget {
                   break;
                 case PopupMenuPages.materialBanner:
                   Navigator.of(context).pushNamed('/material_banner');
+                  break;
+                case PopupMenuPages.instagram:
+                  Navigator.of(context).pushNamed('/instagram');
                   break;
               }
             },
@@ -146,6 +150,10 @@ class HomePage extends StatelessWidget {
                 const PopupMenuItem<PopupMenuPages>(
                   value: PopupMenuPages.materialBanner,
                   child: Text('Material Banner'),
+                ),
+                const PopupMenuItem<PopupMenuPages>(
+                  value: PopupMenuPages.instagram,
+                  child: Text('Instagram'),
                 ),
               ];
             },
