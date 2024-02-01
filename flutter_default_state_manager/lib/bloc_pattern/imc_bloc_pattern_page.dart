@@ -20,8 +20,6 @@ class _ImcBlocPatternPageState extends State<ImcBlocPatternPage> {
 
   var imc = 0.0;
 
-  void _calcularIMC({required double peso, required double altura}) async {}
-
   @override
   void dispose() {
     controller.dispose();
@@ -121,7 +119,7 @@ class _ImcBlocPatternPageState extends State<ImcBlocPatternPage> {
                     double peso = formatter.parse(pesoEC.text) as double;
                     double altura = formatter.parse(alturaEC.text) as double;
 
-                    _calcularIMC(peso: peso, altura: altura);
+                    controller.calcularIMC(peso: peso, altura: altura);
                   },
                   child: const Text('Calcular IMC'),
                 )
