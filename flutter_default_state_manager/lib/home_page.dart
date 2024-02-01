@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_default_state_manager/changeNotifier/imc_change_notifier_page.dart';
 import 'package:flutter_default_state_manager/setState/imc_setState_page.dart';
 import 'package:flutter_default_state_manager/value_notifier/value_notifier_page.dart';
 
@@ -32,7 +33,7 @@ class HomePage extends StatelessWidget {
               child: const Text('ValueNotifier'),
             ),
             ElevatedButton(
-              onPressed: () {},
+              onPressed: () => _goToPage(context, const ImcChangeNotifierPage()),
               child: const Text('ChangeNotifier'),
             ),
             ElevatedButton(
