@@ -15,9 +15,21 @@ class NomeadaPage1 extends StatelessWidget {
           children: [
             ElevatedButton(
               onPressed: () {
-                Get.toNamed('/pageteste');
+                Get.toNamed('/page1', arguments: 'paramtro 1');
               },
               child: const Text('Página que nao existe'),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                Get.toNamed('page1/121');
+              },
+              child: const Text('Page 1'),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                Get.toNamed('envioParametros/queryParams?nome=Rodrigo Pereira&id=1');
+              },
+              child: const Text('QueryParams'),
             ),
           ],
         ),
