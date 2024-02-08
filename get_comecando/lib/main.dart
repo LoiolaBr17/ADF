@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:get_comecando/middlewares/route_middlewares.dart';
 import 'package:get_comecando/navegacao_comuns/navegacao_comum_home_page.dart';
 import 'package:get_comecando/navegacao_nomeada/nomeada_home_page.dart';
 import 'package:get_comecando/navegacao_nomeada/nomeada_page1.dart';
@@ -28,7 +29,13 @@ class MyApp extends StatelessWidget {
       initialRoute: '/home',
       getPages: [
         GetPage(name: '/home', page: () => const NomeadaHomePage()),
-        GetPage(name: '/page1', page: () => const NomeadaPage1()),
+        GetPage(
+          name: '/page1',
+          page: () => const NomeadaPage1(),
+          middlewares: [
+            RouteMiddlewares(),
+          ],
+        ),
       ],
     );
   }
