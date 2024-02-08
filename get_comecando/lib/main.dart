@@ -21,6 +21,10 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       unknownRoute: GetPage(name: '/404', page: () => Container()),
+      routingCallback: (routing) {
+        print(routing?.previous);
+        print(routing?.current);
+      },
       initialRoute: '/home',
       getPages: [
         GetPage(name: '/home', page: () => const NomeadaHomePage()),
