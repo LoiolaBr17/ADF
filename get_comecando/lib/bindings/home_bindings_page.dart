@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get_comecando/bindings/bindings_controller.dart';
+import 'package:get_comecando/bindings/bindings_example.dart';
+import 'package:get_comecando/pages/home_page.dart';
 
 class HomeBindingsPage extends StatelessWidget {
   const HomeBindingsPage({super.key});
@@ -14,7 +16,13 @@ class HomeBindingsPage extends StatelessWidget {
       body: Center(
         child: Column(
           children: [
-            Text(Get.find<BindingsController>().name)
+            Text(Get.find<BindingsController>().name),
+            ElevatedButton(
+              onPressed: () {
+                Get.to(const HomePage(), binding: BindingsBuilder(() => BindingsController(name: 'teste')));
+              },
+              child: const Text('Nova rota'),
+            ),
           ],
         ),
       ),
