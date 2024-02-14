@@ -4,7 +4,6 @@ import 'package:get_comecando/bindings/bindings_controller.dart';
 import 'package:get_comecando/bindings/bindings_example.dart';
 import 'package:get_comecando/bindings/home_bindings_page.dart';
 import 'package:get_comecando/middlewares/route_middlewares.dart';
-import 'package:get_comecando/navegacao_comuns/navegacao_comum_home_page.dart';
 import 'package:get_comecando/navegacao_nomeada/nomeada_home_page.dart';
 import 'package:get_comecando/navegacao_nomeada/nomeada_page1.dart';
 
