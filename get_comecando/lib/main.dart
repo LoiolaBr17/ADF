@@ -4,6 +4,7 @@ import 'package:get_comecando/bindings/bindings_controller.dart';
 import 'package:get_comecando/bindings/bindings_example.dart';
 import 'package:get_comecando/bindings/home_bindings_page.dart';
 import 'package:get_comecando/bindings/middleware_bindings.dart';
+import 'package:get_comecando/initialBinding/initial_binding.dart';
 import 'package:get_comecando/middlewares/route_middlewares.dart';
 import 'package:get_comecando/navegacao_nomeada/nomeada_home_page.dart';
 import 'package:get_comecando/navegacao_nomeada/nomeada_page1.dart';
@@ -20,6 +21,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       title: 'Flutter Demo',
+      initialBinding: InitialBinding(),
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
