@@ -8,8 +8,11 @@ import 'package:get_comecando/initialBinding/initial_binding.dart';
 import 'package:get_comecando/middlewares/route_middlewares.dart';
 import 'package:get_comecando/navegacao_nomeada/nomeada_home_page.dart';
 import 'package:get_comecando/navegacao_nomeada/nomeada_page1.dart';
+import 'package:get_comecando/service/storage_service.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Get.putAsync(() => StorageService().init());
   runApp(const MyApp());
 }
 
