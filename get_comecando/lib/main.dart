@@ -9,6 +9,8 @@ import 'package:get_comecando/middlewares/route_middlewares.dart';
 import 'package:get_comecando/navegacao_nomeada/nomeada_home_page.dart';
 import 'package:get_comecando/navegacao_nomeada/nomeada_page1.dart';
 import 'package:get_comecando/service/storage_service.dart';
+import 'package:get_comecando/stateManagement/controllers/getxControllerExample/controller.dart';
+import 'package:get_comecando/stateManagement/controllers/getxControllerExample/getxControllerExamplePage.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -53,16 +55,21 @@ class MyApp extends StatelessWidget {
           name: '/bindings2',
           binding: BindingsBuilder(() {
             Get.put(BindingsController(name: 'criando dependência'));
-            
           }),
           page: () => const HomeBindingsPage(),
         ),
         GetPage(
           name: '/bindings3',
           middlewares: [MiddlewareBindings()],
-          binding: BindingsBuilder.put(() => BindingsController(name: 'criando dependência')),
+          binding: BindingsBuilder.put(
+              () => BindingsController(name: 'criando dependência')),
           page: () => const HomeBindingsPage(),
         ),
+        GetPage(
+          name: '/controllersExample',
+          binding: BindingsBuilder.put(() => Controller()),
+          page: () => const GetxControllerExamplePage(),
+        )
       ],
     );
   }
