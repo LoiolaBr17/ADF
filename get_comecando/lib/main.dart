@@ -67,7 +67,9 @@ class MyApp extends StatelessWidget {
         ),
         GetPage(
           name: '/controllersExample',
-          binding: BindingsBuilder.put(() => Controller()),
+          binding: BindingsBuilder((){
+            Get.lazyPut(() => Controller());
+          }),
           page: () => const GetxControllerExamplePage(),
         )
       ],
