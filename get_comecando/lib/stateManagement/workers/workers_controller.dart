@@ -16,7 +16,11 @@ class WorkersController extends GetxController {
       condition: () => _nome.value == 'mateus',
     );
 
+    // Executado uma única vez
+    final onceWorker = once<String>(_nome, (nome) => print(nome));
+
     _workers.add(everWorker);
+    _workers.add(onceWorker);
     super.onInit();
   }
 
