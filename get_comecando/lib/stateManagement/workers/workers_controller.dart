@@ -26,9 +26,13 @@ class WorkersController extends GetxController {
       time: const Duration(seconds: 2),
     );
 
+    // espera a pausa da interação para chamar a callback
+    final debouncerWorker = debounce<String>(_nome, (nome) => print(nome));
+
     _workers.add(everWorker);
     _workers.add(onceWorker);
     _workers.add(intervalWorker);
+    _workers.add(debouncerWorker);
     super.onInit();
   }
 
