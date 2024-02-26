@@ -19,8 +19,16 @@ class WorkersController extends GetxController {
     // Executado uma única vez
     final onceWorker = once<String>(_nome, (nome) => print(nome));
 
+    // Espera por um intervalo para poder executar a callback
+    final intervalWorker = interval<String>(
+      _nome,
+      (nome) => print(nome),
+      time: const Duration(seconds: 2),
+    );
+
     _workers.add(everWorker);
     _workers.add(onceWorker);
+    _workers.add(intervalWorker);
     super.onInit();
   }
 
@@ -28,7 +36,7 @@ class WorkersController extends GetxController {
   void onClose() {
     for (var worker in _workers) {
       worker();
-    }    
+    }
     super.onClose();
   }
 
